@@ -1,9 +1,9 @@
 {
-  "name": "SomfyProtect2MQTT-dev",
+  "name": "SomfyProtect2MQTT-personal",
   "version": "0.1.6",
-  "slug": "somfy-protect-2-mqtt-dev",
-  "description": "Publish Somfy Home Alarm as MQTT messages (dev branch)",
-  "url": "https://github.com/schumijo/homeassistant-addons/tree/main/SomfyProtect2MQTT-dev",
+  "slug": "somfy-protect-2-mqtt",
+  "description": "Publish Somfy Home Alarm as MQTT messages",
+  "url": "https://github.com/jordanauge/homeassistant-addons/tree/main/SomfyProtect2MQTT",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
   "boot": "auto",
@@ -27,9 +27,8 @@
       "topic_prefix": "somfyProtect2mqtt",
       "ha_discover_prefix": "homeassistant"
     },
-    "delay_site": "10",
-    "delay_device": "60",
-    "manual_snapshot": false,
+    "delay_site": 10,
+    "delay_device": 60,
     "debug": false
   },
   "schema": {
@@ -54,7 +53,6 @@
     },
     "delay_site": "int?",
     "delay_device": "int?",
-    "manual_snapshot": "bool",
     "debug": "bool"
   }
 }

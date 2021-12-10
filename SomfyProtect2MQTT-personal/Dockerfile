@@ -6,14 +6,13 @@ ENV LANG C.UTF-8
 ARG VERSION=0.1.4
 
 # Install required packages
-RUN apk add --no-cache py3-pip
-RUN pip3 install python-json2yaml
+RUN apk add --no-cache py3-pip git
+RUN pip3 install python-json2yaml oauthlib requests_oauthlib
+RUN pip3 install git+https://github.com/jordanauge/somfy-protect-api
 
-# Download source and untar
+# Download sources from git
 WORKDIR /usr/src
-ADD "https://github.com/Minims/SomfyProtect2MQTT/archive/refs/tags/${VERSION}.tar.gz" src.tar.gz
-RUN tar -xvf src.tar.gz
-RUN mv /usr/src/SomfyProtect2MQTT-${VERSION} /usr/src/SomfyProtect2MQTT
+RUN git clone https://github.com/jordanauge/SomfyProtect2MQTT
 
 # Install python requirements
 WORKDIR /usr/src/SomfyProtect2MQTT/somfyProtect2Mqtt
